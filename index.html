@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NiilaVerse - Digital Commerce & Business Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f8f9fa;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background: linear-gradient(45deg, #ff4757, #ff6b7a);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+        cursor: pointer;
+    }
+
+    .nav-links a:hover {
+        color: #ff4757;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Page sections - initially hidden except home */
+    .page-section {
+        display: none;
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+
+    .page-section.active {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-button {
+        background: #ff4757;
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 71, 87, 0.3);
+    }
+
+    /* Services Section */
+    .services {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #2d3436;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .service-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: #2d3436;
+    }
+
+    .service-card p {
+        color: #636e72;
+        line-height: 1.6;
+    }
+
+    /* About Section */
+    .about {
+        padding: 80px 0;
+        background: #f8f9fa;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .about-text h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        color: #2d3436;
+    }
+
+    .about-text p {
+        margin-bottom: 1.5rem;
+        color: #636e72;
+        font-size: 1.1rem;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 1rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .stat-label {
+        color: #636e72;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    .stat-desc {
+        color: #667eea;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .testimonial {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1rem;
+        color: #2d3436;
+        font-size: 1.1rem;
+    }
+
+    .testimonial-author {
+        font-weight: bold;
+        color: #667eea;
+    }
+
+    .testimonial-role {
+        color: #636e72;
+        font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .contact-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .contact-item {
+        text-align: center;
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    .contact-item h4 {
+        margin-bottom: 0.5rem;
+        color: #667eea;
+    }
+
+    /* Forms */
+    .form-container {
+        background: #f8f9fa;
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #2d3436;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e0e6ed;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    /* Coming Soon */
+    .coming-soon {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+    }
+
+    .coming-soon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .coming-soon-card {
+        background: rgba(255,255,255,0.1);
+        padding: 2rem;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .coming-soon-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #ff4757;
+    }
+
+    /* Terms */
+    .terms {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .terms-content {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    .terms-content h2 {
+        color: #2d3436;
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .terms-content h3 {
+        color: #667eea;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .terms-content p {
+        margin-bottom: 1rem;
+        color: #636e72;
+    }
+
+    /* Footer */
+    footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #1a1a1a;
+            flex-direction: column;
+            gap: 0;
+            padding: 1rem 0;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-content {
+            grid-template-columns: 1fr;
+        }
+
+        .stats {
+            grid-template-columns: 1fr;
+        }
+
+        .testimonial-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+
+        .coming-soon-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form-container {
+            padding: 2rem;
+            margin: 0 1rem;
+        }
+
+        .container {
+            padding: 0 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero {
+            padding: 100px 0 60px;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        .service-card {
+            padding: 1.5rem;
+        }
+
+        .form-container {
+            padding: 1.5rem;
+        }
+    }
+
+    /* Tablet responsive */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .testimonial-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .coming-soon-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">🌐</div>
+                NiilaVerse
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="showPage('home')">Home</a></li>
+                <li><a onclick="showPage('services')">Services</a></li>
+                <li><a onclick="showPage('about')">About</a></li>
+                <li><a onclick="showPage('reviews')">Reviews</a></li>
+                <li><a onclick="showPage('contact')">Contact</a></li>
+                <li><a onclick="showPage('coming-soon')">Coming Soon</a></li>
+                <li><a onclick="showPage('terms')">Terms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+```
+<!-- HOME PAGE -->
+<section id="home" class="page-section active">
+    <div class="hero">
+        <div class="container">
+            <h1>NiilaVerse</h1>
+            <p>Launched in 2025, NiilaVerse is a fresh resource for digital commerce entrepreneurs seeking comprehensive business solutions and innovative AI-powered tools for global success.</p>
+            <a class="cta-button" onclick="showPage('service-inquiry')">Explore Our Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES PAGE -->
+<section id="services" class="page-section">
+    <div class="services">
+        <div class="container">
+            <h2 class="section-title">Our Core Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>TikTok Shop and Shopify store development with product sourcing guidance, inventory planning, and sales optimization strategies for new entrepreneurs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Business Formation Consulting</h3>
+                    <p>Guidance for establishing US-based companies, including LLC formation basics, tax considerations, and compliance guidance for international entrepreneurs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>Supplier Network Access</h3>
+                    <p>Connections to vetted suppliers, quality assessment guidance, shipping coordination support, and sourcing strategies for retail businesses.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Digital Product Development</h3>
+                    <p>Creation of digital resources, business guides, and automated systems designed to help scale business operations efficiently.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Integration Consulting</h3>
+                    <p>Guidance on AI solutions for business automation, customer service optimization, and operational efficiency improvements.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Strategic Business Planning</h3>
+                    <p>Business planning support, market research guidance, and growth strategies to help entrepreneurs build sustainable ventures.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT PAGE -->
+<section id="about" class="page-section">
+    <div class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Building the Future of Digital Commerce</h2>
+                    <p>Launched in 2025, NiilaVerse represents the convergence of traditional business principles with cutting-edge digital innovation. Our mission is to democratize access to global commerce opportunities while providing the tools and knowledge necessary for sustainable business growth.</p>
+                    <p>We specialize in bridging the gap between international entrepreneurs and the US market, offering comprehensive solutions that span from initial business formation to advanced operational systems.</p>
+                    <p>Our approach combines proven business strategies with emerging technologies, ensuring our clients are positioned for both immediate success and long-term scalability in an increasingly digital marketplace.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Building Our Consulting Network</div>
+                        <div class="stat-desc">Growing community of entrepreneurs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Partnering with Trusted Suppliers</div>
+                        <div class="stat-desc">Vetted manufacturing connections</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Committed to Client Success</div>
+                        <div class="stat-desc">Focused on your growth</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Dedicated Support Team</div>
+                        <div class="stat-desc">Here when you need us</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS PAGE -->
+<section id="reviews" class="page-section">
+    <div class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Early Success Stories</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">"NiilaVerse's guidance helped me plan my U.S. business entry. Their systematic approach gave me confidence in taking the next steps."</div>
+                    <div class="testimonial-author">Sarah M.</div>
+                    <div class="testimonial-role">Aspiring Entrepreneur</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"The supplier network resources provided valuable insights for my product research. Great starting point for new business owners."</div>
+                    <div class="testimonial-author">Michael R.</div>
+                    <div class="testimonial-role">E-commerce Startup</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"Working with NiilaVerse gave me access to information I couldn't have found on my own. Their guidance is practical and actionable."</div>
+                    <div class="testimonial-author">Amanda F.</div>
+                    <div class="testimonial-role">Digital Commerce Beginner</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT PAGE -->
+<section id="contact" class="page-section">
+    <div class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p>hello@niilaverse.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Website</h4>
+                        <p>niilaverse.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Business Address</h4>
+                        <p>30 N Gould St # 53797<br>Sheridan, Wyoming 82801</p>
+                        <small style="color: #636e72; font-style: italic;">*For banking verification purposes</small>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: #2d3436;">Get In Touch</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMING SOON PAGE -->
+<section id="coming-soon" class="page-section">
+    <div class="coming-soon">
+        <div class="container">
+            <h2 class="section-title">Coming Soon</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Exciting new products and services launching soon!</p>
+            
+            <div class="coming-soon-grid">
+                <div class="coming-soon-card">
+                    <h3>🛍️ NiilaVerse Digital Store</h3>
+                    <p>TikTok-driven Shopify store featuring curated digital products including comprehensive e-books on digital commerce, verified supplier databases, business setup guides, and exclusive entrepreneur resources.</p>
+                </div>
+                <div class="coming-soon-card">
+                    <h3>🤖 AI-Powered Consulting Suite</h3>
+                    <p>Stay tuned for our AI-driven consulting tools launching soon—streamline your U.S. digital business with smart automation! Features will include automated business setup guidance and intelligent supplier matching.</p>
+                </div>
+                <div class="coming-soon-card">
+                    <h3>📚 Entrepreneur Academy</h3>
+                    <p>Comprehensive online courses covering everything from LLC formation to advanced e-commerce strategies, featuring step-by-step video tutorials and downloadable templates.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <a class="cta-button" onclick="showPage('consultation-booking')">Book Early Access Consultation</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE INQUIRY FORM -->
+<section id="service-inquiry" class="page-section">
+    <div class="contact">
+        <div class="container">
+            <h2 class="section-title">Service Inquiry</h2>
+            <div class="form-container">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #2d3436;">Tell us about your project</h3>
+                <form id="serviceForm">
+                    <div class="form-group">
+                        <label for="inquiry-name">Name *</label>
+                        <input type="text" id="inquiry-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiry-email">Email *</label>
+                        <input type="email" id="inquiry-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiry-service">Service Interest</label>
+                        <select id="inquiry-service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="ecommerce">E-Commerce Solutions</option>
+                            <option value="business-formation">Business Formation</option>
+                            <option value="supplier-network">Supplier Network</option>
+                            <option value="digital-products">Digital Products</option>
+                            <option value="ai-integration">AI Integration</option>
+                            <option value="business-planning">Strategic Planning</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiry-message">Project Details *</label>
+                        <textarea id="inquiry-message" name="message" placeholder="Describe your project, goals, timeline, and any specific questions..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONSULTATION BOOKING FORM -->
+<section id="consultation-booking" class="page-section">
+    <div class="contact">
+        <div class="container">
+            <h2 class="section-title">Book Your Consultation</h2>
+            <div class="form-container">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #2d3436;">Start Your Journey</h3>
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="consult-name">Name *</label>
+                        <input type="text" id="consult-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consult-email">Email *</label>
+                        <input type="email" id="consult-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consult-type">Consultation Type *</label>
+                        <select id="consult-type" name="consultation-type" required>
+                            <option value="">Select consultation type</option>
+                            <option value="us-business-setup">U.S. Business Setup</option>
+                            <option value="supplier-sourcing">Supplier Sourcing</option>
+                            <option value="ecommerce-strategy">E-commerce Strategy</option>
+                            <option value="ai-automation">AI & Automation</option>
+                            <option value="digital-products">Digital Product Development</option>
+                            <option value="general-planning">General Business Planning</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="consult-experience">Current Experience Level</label>
+                        <select id="consult-experience" name="experience">
+                            <option value="beginner">Complete Beginner</option>
+                            <option value="some-experience">Some Experience</option>
+                            <option value="experienced">Experienced</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="consult-goals">Goals & Objectives *</label>
+                        <textarea id="consult-goals" name="goals" placeholder="What do you hope to achieve? What are your main objectives and timeline?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Book Consultation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TERMS AND CONDITIONS PAGE -->
+<section id="terms" class="page-section">
+    <div class="terms">
+        <div class="container">
+            <div class="terms-content">
+                <h2>Terms and Conditions</h2>
+                <p><strong>Last Updated:</strong> January 2025</p>
+                
+                <h3>1. Introduction</h3>
+                <p>Welcome to NiilaVerse ("we," "our," or "us"). These Terms and Conditions ("Terms") govern your use of our website and services. By accessing or using our services, you agree to be bound by these Terms.</p>
+                
+                <h3>2. Services</h3>
+                <p>NiilaVerse provides digital commerce consulting, business formation guidance, supplier network access, and related educational services. Our services are informational and consultative in nature and do not constitute legal, financial, or tax advice.</p>
+                
+                <h3>3. User Obligations</h3>
+                <p>By using our services, you agree to: (a) provide accurate and complete information, (b) comply with all applicable laws and regulations, (c) not use our services for any illegal or unauthorized purposes, and (d) respect intellectual property rights.</p>
+                
+                <h3>4. Intellectual Property</h3>
+                <p>All content, materials, and resources provided by NiilaVerse, including but not limited to text, graphics, logos, and software, are owned by or licensed to NiilaVerse and are protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
+                
+                <h3>5. Disclaimers</h3>
+                <p>Our services are provided "as is" without warranties of any kind. We do not guarantee specific business outcomes, success rates, or financial results. Business formation and international commerce involve inherent risks, and past performance does not guarantee future results. You should consult with qualified professionals for legal, tax, and financial advice.</p>
+                
+                <h3>6. Limitation of Liability</h3>
+                <p>To the maximum extent permitted by law, NiilaVerse shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities, arising from your use of our services. Our total liability shall not exceed the amount paid by you for our services.</p>
+                
+                <h3>7. Privacy</h3>
+                <p>We respect your privacy and handle your personal information in accordance with applicable privacy laws. By using our services, you consent to our collection and use of your information as described in our privacy practices.</p>
+                
+                <h3>8. Governing Law</h3>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the State of Wyoming, United States, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of Wyoming.</p>
+                
+                <h3>9. Changes to Terms</h3>
+                <p>We reserve the right to modify these Terms at any time. Updated Terms will be posted on our website with a revised "Last Updated" date. Your continued use of our services after any changes constitutes acceptance of the new Terms.</p>
+                
+                <h3>10. Contact Information</h3>
+                <p>If you have questions about these Terms, please contact us at:</p>
+                <p><strong>Email:</strong> hello@niilaverse.com<br>
+                <strong>Address:</strong> 30 N Gould St # 53797, Sheridan, Wyoming 82801</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 NiilaVerse. All rights reserved. | Empowering Global Digital Commerce</p>
+    </div>
+</footer>
+
+<script>
+    // Page navigation
+    function showPage(pageId) {
+        // Hide all pages
+        const pages = document.querySelectorAll('.page-section');
+        pages.forEach(page => page.classList.remove('active'));
+        
+        // Show selected page
+        const targetPage = document.getElementById(pageId);
+        if (targetPage) {
+            targetPage.classList.add('active');
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Close mobile menu if open
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.remove('active');
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+    }
+
+    // Form submissions
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        this.reset();
+    });
+
+    document.getElementById('serviceForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your service inquiry! We\'ll review your request and respond within 24 hours.');
+        this.reset();
+    });
+
+    document.getElementById('consultationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for booking a consultation! We\'ll contact you within 24 hours to schedule your session.');
+        this.reset();
+    });
+
+    // Header background change on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(26, 26, 26, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)';
+            header.style.backdropFilter = 'none';
+        }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const nav = document.querySelector('nav');
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        
+        if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
+    });
+
+    // Smooth scrolling for better UX
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    // Add loading animation for forms
+    function addLoadingState(button) {
+        const originalText = button.textContent;
+        button.textContent = 'Sending...';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+        }, 2000);
+    }
+
+    // Enhanced form validation
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // Add input validation feedback
+    document.querySelectorAll('input[type="email"]').forEach(input => {
+        input.addEventListener('blur', function() {
+            if (this.value && !validateEmail(this.value)) {
+                this.style.borderColor = '#ff4757';
+            } else {
+                this.style.borderColor = '#e0e6ed';
+            }
+        });
+    });
+
+    // Add focus management for accessibility
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                document.querySelector('.mobile-menu-toggle').focus();
+            }
+        }
+    });
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+        // Ensure home page is shown initially
+        showPage('home');
+        
+        // Add fade-in animation for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and testimonials
+        document.querySelectorAll('.service-card, .testimonial, .coming-soon-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    });
+</script>
+```
+
+</body>
+</html>

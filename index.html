@@ -17,7 +17,7 @@
         font-family: 'Arial', sans-serif;
         line-height: 1.6;
         color: #333;
-        background: #f8f9fa;
+        background: #ffffff;
     }
 
     .container {
@@ -28,7 +28,7 @@
 
     /* Header */
     header {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        background: #000000;
         color: white;
         padding: 1rem 0;
         position: fixed;
@@ -49,24 +49,55 @@
         align-items: center;
         font-size: 1.5rem;
         font-weight: bold;
+        letter-spacing: 2px;
     }
 
     .logo-icon {
         width: 40px;
         height: 40px;
-        margin-right: 10px;
-        background: linear-gradient(45deg, #ff4757, #ff6b7a);
-        border-radius: 50%;
+        margin-right: 15px;
+        background: #000000;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
+        position: relative;
+    }
+
+    /* Custom N Logo with red globe */
+    .logo-n {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .logo-globe {
+        position: absolute;
+        top: -5px;
+        right: -8px;
+        width: 12px;
+        height: 12px;
+        background: #ff2c2c;
+        border-radius: 50%;
+        border: 2px solid #ff2c2c;
+    }
+
+    .logo-globe::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border-radius: 50%;
+        border: 1px solid white;
     }
 
     .nav-links {
         display: flex;
         list-style: none;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .nav-links a {
@@ -74,10 +105,12 @@
         text-decoration: none;
         transition: color 0.3s;
         cursor: pointer;
+        font-weight: 500;
+        letter-spacing: 1px;
     }
 
     .nav-links a:hover {
-        color: #ff4757;
+        color: #ff2c2c;
     }
 
     .mobile-menu-toggle {
@@ -89,7 +122,7 @@
         cursor: pointer;
     }
 
-    /* Page sections - initially hidden except home */
+    /* Page sections */
     .page-section {
         display: none;
         min-height: 100vh;
@@ -100,159 +133,189 @@
         display: block;
     }
 
+    /* Front Page Sections */
+    .front-page-section {
+        padding: 80px 0;
+    }
+
     /* Hero Section */
     .hero {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), 
+                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23333" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+        background-size: cover;
+        background-position: center;
         color: white;
-        padding: 120px 0 80px;
+        padding: 150px 0 100px;
         text-align: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
     }
 
-    .hero h1 {
-        font-size: 3rem;
+    .hero-content h1 {
+        font-size: 4rem;
         margin-bottom: 1rem;
         font-weight: 700;
+        letter-spacing: 3px;
     }
 
-    .hero p {
-        font-size: 1.2rem;
+    .hero-content h1 .accent {
+        color: #ff2c2c;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
         margin-bottom: 2rem;
+        font-style: italic;
+        color: #cccccc;
+        letter-spacing: 1px;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+        color: #eeeeee;
     }
 
     .cta-button {
-        background: #ff4757;
+        background: #ff2c2c;
         color: white;
-        padding: 12px 30px;
+        padding: 15px 40px;
         text-decoration: none;
-        border-radius: 25px;
+        border-radius: 50px;
         font-weight: bold;
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition: all 0.3s;
         display: inline-block;
         cursor: pointer;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        border: 2px solid #ff2c2c;
     }
 
     .cta-button:hover {
+        background: transparent;
+        color: #ff2c2c;
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(255, 71, 87, 0.3);
+        box-shadow: 0 10px 25px rgba(255, 44, 44, 0.3);
+    }
+
+    .cta-button-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+
+    .cta-button-secondary:hover {
+        background: white;
+        color: #000000;
     }
 
     /* Services Section */
     .services {
-        padding: 80px 0;
-        background: white;
+        background: #f8f9fa;
     }
 
     .section-title {
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin-bottom: 3rem;
-        color: #2d3436;
+        color: #000000;
+        font-weight: 700;
+    }
+
+    .section-title .accent {
+        color: #ff2c2c;
     }
 
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 2rem;
         margin-top: 2rem;
     }
 
     .service-card {
         background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         text-align: center;
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition: all 0.3s;
+        border: 2px solid transparent;
     }
 
     .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        border-color: #ff2c2c;
     }
 
     .service-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        border-radius: 50%;
-        margin: 0 auto 1rem;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #ff2c2c, #ff5555);
+        border-radius: 20px;
+        margin: 0 auto 1.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: white;
     }
 
     .service-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         margin-bottom: 1rem;
-        color: #2d3436;
+        color: #000000;
+        font-weight: 600;
     }
 
     .service-card p {
-        color: #636e72;
-        line-height: 1.6;
+        color: #666666;
+        line-height: 1.7;
+        font-size: 1rem;
     }
 
-    /* About Section */
-    .about {
-        padding: 80px 0;
-        background: #f8f9fa;
-    }
-
-    .about-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-    }
-
-    .about-text h2 {
-        font-size: 2.2rem;
-        margin-bottom: 1.5rem;
-        color: #2d3436;
-    }
-
-    .about-text p {
-        margin-bottom: 1.5rem;
-        color: #636e72;
-        font-size: 1.1rem;
-    }
-
-    .stats {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-
-    .stat-item {
+    /* Coming Soon Section */
+    .coming-soon {
+        background: #000000;
+        text color: white;
         text-align: center;
-        padding: 1rem;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
 
-    .stat-label {
-        color: #636e72;
-        font-size: 0.9rem;
-        font-weight: bold;
+    .coming-soon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
     }
 
-    .stat-desc {
-        color: #667eea;
-        font-size: 0.8rem;
-        margin-top: 0.5rem;
+    .coming-soon-card {
+        background: rgba(255,255,255,0.05);
+        padding: 2.5rem;
+        border-radius: 15px;
+        border: 2px solid rgba(255, 44, 44, 0.3);
+        transition: all 0.3s;
     }
 
-    /* Testimonials */
-    .testimonials {
-        padding: 80px 0;
-        background: white;
+    .coming-soon-card:hover {
+        background: rgba(255,255,255,0.1);
+        border-color: #ff2c2c;
+        transform: translateY(-5px);
+    }
+
+    .coming-soon-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #ff2c2c;
+    }
+
+    /* Reviews Section */
+    .reviews {
+        background: #f8f9fa;
     }
 
     .testimonial-grid {
@@ -263,30 +326,102 @@
     }
 
     .testimonial {
-        background: #f8f9fa;
-        padding: 2rem;
-        border-radius: 10px;
-        border-left: 4px solid #667eea;
+        background: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        border-left: 5px solid #ff2c2c;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s;
+    }
+
+    .testimonial:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     }
 
     .testimonial-text {
         font-style: italic;
-        margin-bottom: 1rem;
-        color: #2d3436;
+        margin-bottom: 1.5rem;
+        color: #333333;
         font-size: 1.1rem;
+        line-height: 1.6;
     }
 
     .testimonial-author {
         font-weight: bold;
-        color: #667eea;
+        color: #ff2c2c;
+        font-size: 1.1rem;
     }
 
     .testimonial-role {
-        color: #636e72;
+        color: #666666;
         font-size: 0.9rem;
     }
 
-    /* Contact Section */
+    /* About Page */
+    .about {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #000000;
+    }
+
+    .about-text h2 .accent {
+        color: #ff2c2c;
+    }
+
+    .about-text p {
+        margin-bottom: 1.5rem;
+        color: #666666;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 2rem;
+        background: #f8f9fa;
+        border-radius: 15px;
+        border: 2px solid transparent;
+        transition: all 0.3s;
+    }
+
+    .stat-item:hover {
+        border-color: #ff2c2c;
+        transform: translateY(-5px);
+    }
+
+    .stat-label {
+        color: #000000;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-desc {
+        color: #ff2c2c;
+        font-size: 0.9rem;
+    }
+
+    /* Contact Page */
     .contact {
         padding: 80px 0;
         background: white;
@@ -301,29 +436,63 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
     }
 
     .contact-item {
         text-align: center;
         background: #f8f9fa;
         padding: 2rem;
-        border-radius: 10px;
+        border-radius: 15px;
+        border: 2px solid transparent;
+        transition: all 0.3s;
+    }
+
+    .contact-item:hover {
+        border-color: #ff2c2c;
+        transform: translateY(-5px);
     }
 
     .contact-item h4 {
-        margin-bottom: 0.5rem;
-        color: #667eea;
+        margin-bottom: 1rem;
+        color: #000000;
+        font-size: 1.2rem;
+    }
+
+    .clickable-link {
+        color: #ff2c2c;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .clickable-link:hover {
+        text-decoration: underline;
+        color: #cc2222;
     }
 
     /* Forms */
     .form-container {
         background: #f8f9fa;
         padding: 3rem;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         max-width: 600px;
         margin: 0 auto;
+        border: 2px solid transparent;
+        transition: all 0.3s;
+    }
+
+    .form-container:hover {
+        border-color: rgba(255, 44, 44, 0.3);
+    }
+
+    .form-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #000000;
+        font-size: 1.8rem;
+        font-weight: 600;
     }
 
     .form-group {
@@ -333,7 +502,7 @@
     .form-group label {
         display: block;
         margin-bottom: 0.5rem;
-        color: #2d3436;
+        color: #000000;
         font-weight: bold;
     }
 
@@ -341,18 +510,20 @@
     .form-group select,
     .form-group textarea {
         width: 100%;
-        padding: 12px;
+        padding: 15px;
         border: 2px solid #e0e6ed;
-        border-radius: 8px;
+        border-radius: 10px;
         font-size: 1rem;
-        transition: border-color 0.3s;
+        transition: all 0.3s;
+        background: white;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
         outline: none;
-        border-color: #667eea;
+        border-color: #ff2c2c;
+        box-shadow: 0 0 0 3px rgba(255, 44, 44, 0.1);
     }
 
     .form-group textarea {
@@ -361,85 +532,49 @@
     }
 
     .submit-btn {
-        background: linear-gradient(45deg, #667eea, #764ba2);
+        background: linear-gradient(45deg, #ff2c2c, #ff5555);
         color: white;
-        padding: 12px 30px;
+        padding: 15px 40px;
         border: none;
-        border-radius: 25px;
+        border-radius: 50px;
         font-weight: bold;
         cursor: pointer;
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition: all 0.3s;
         width: 100%;
         font-size: 1.1rem;
+        letter-spacing: 1px;
     }
 
     .submit-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 10px 25px rgba(255, 44, 44, 0.3);
     }
 
-    /* Coming Soon */
-    .coming-soon {
-        padding: 80px 0;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        text-align: center;
-    }
-
-    .coming-soon-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-    }
-
-    .coming-soon-card {
-        background: rgba(255,255,255,0.1);
+    /* Terms Summary */
+    .terms-summary {
+        background: #f8f9fa;
         padding: 2rem;
         border-radius: 15px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
+        margin-top: 3rem;
+        border-left: 5px solid #ff2c2c;
     }
 
-    .coming-soon-card h3 {
-        font-size: 1.5rem;
+    .terms-summary h4 {
+        color: #000000;
         margin-bottom: 1rem;
-        color: #ff4757;
+        font-size: 1.2rem;
     }
 
-    /* Terms */
-    .terms {
-        padding: 80px 0;
-        background: white;
-    }
-
-    .terms-content {
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.8;
-    }
-
-    .terms-content h2 {
-        color: #2d3436;
-        margin-bottom: 2rem;
-        font-size: 2.2rem;
-    }
-
-    .terms-content h3 {
-        color: #667eea;
-        margin-top: 2rem;
+    .terms-summary p {
+        color: #666666;
+        font-size: 0.95rem;
+        line-height: 1.6;
         margin-bottom: 1rem;
-        font-size: 1.3rem;
-    }
-
-    .terms-content p {
-        margin-bottom: 1rem;
-        color: #636e72;
     }
 
     /* Footer */
     footer {
-        background: #1a1a1a;
+        background: #000000;
         color: white;
         padding: 2rem 0;
         text-align: center;
@@ -457,10 +592,11 @@
             top: 100%;
             left: 0;
             width: 100%;
-            background: #1a1a1a;
+            background: #000000;
             flex-direction: column;
             gap: 0;
             padding: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .nav-links.active {
@@ -469,14 +605,23 @@
 
         .nav-links li {
             text-align: center;
-            padding: 0.5rem 0;
+            padding: 1rem 0;
+            border-bottom: 1px solid #333;
         }
 
-        .hero h1 {
-            font-size: 2rem;
+        .nav-links li:last-child {
+            border-bottom: none;
         }
 
-        .hero p {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+        }
+
+        .hero-description {
             font-size: 1rem;
         }
 
@@ -484,7 +629,9 @@
             font-size: 2rem;
         }
 
-        .services-grid {
+        .services-grid,
+        .coming-soon-grid,
+        .testimonial-grid {
             grid-template-columns: 1fr;
         }
 
@@ -496,15 +643,7 @@
             grid-template-columns: 1fr;
         }
 
-        .testimonial-grid {
-            grid-template-columns: 1fr;
-        }
-
         .contact-info {
-            grid-template-columns: 1fr;
-        }
-
-        .coming-soon-grid {
             grid-template-columns: 1fr;
         }
 
@@ -516,24 +655,30 @@
         .container {
             padding: 0 15px;
         }
+
+        .front-page-section {
+            padding: 60px 0;
+        }
     }
 
     @media (max-width: 480px) {
         .hero {
-            padding: 100px 0 60px;
+            padding: 120px 0 80px;
         }
 
-        .hero h1 {
-            font-size: 1.8rem;
+        .hero-content h1 {
+            font-size: 2rem;
         }
 
         .cta-button {
-            padding: 10px 20px;
-            font-size: 0.9rem;
+            padding: 12px 30px;
+            font-size: 1rem;
         }
 
-        .service-card {
-            padding: 1.5rem;
+        .service-card,
+        .testimonial,
+        .coming-soon-card {
+            padding: 2rem;
         }
 
         .form-container {
@@ -541,19 +686,21 @@
         }
     }
 
-    /* Tablet responsive */
-    @media (min-width: 769px) and (max-width: 1024px) {
-        .services-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
 
-        .testimonial-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    /* Animation classes */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
 
-        .coming-soon-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 </style>
 ```
@@ -563,73 +710,125 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <div class="logo-icon">🌐</div>
-                NiilaVerse
+                <div class="logo-icon">
+                    <div class="logo-n">N<div class="logo-globe"></div></div>
+                </div>
+                NIILAVERSE
             </div>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
-                <li><a onclick="showPage('home')">Home</a></li>
-                <li><a onclick="showPage('services')">Services</a></li>
-                <li><a onclick="showPage('about')">About</a></li>
-                <li><a onclick="showPage('reviews')">Reviews</a></li>
-                <li><a onclick="showPage('contact')">Contact</a></li>
-                <li><a onclick="showPage('coming-soon')">Coming Soon</a></li>
-                <li><a onclick="showPage('terms')">Terms</a></li>
+                <li><a onclick="showHome()">HOME</a></li>
+                <li><a onclick="scrollToServices()">SERVICES</a></li>
+                <li><a onclick="showAbout()">ABOUT</a></li>
+                <li><a onclick="showContact()">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
 ```
-<!-- HOME PAGE -->
+<!-- HOME PAGE (Front Page) -->
 <section id="home" class="page-section active">
+    <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h1>NiilaVerse</h1>
-            <p>Launched in 2025, NiilaVerse is a fresh resource for digital commerce entrepreneurs seeking comprehensive business solutions and innovative AI-powered tools for global success.</p>
-            <a class="cta-button" onclick="showPage('service-inquiry')">Explore Our Services</a>
+            <div class="hero-content">
+                <h1>No Borders. No Limits. <span class="accent">Just Success.</span></h1>
+                <div class="hero-subtitle">A launchpad for Global Entrepreneurs</div>
+                <p class="hero-description">Launched in 2025, NiilaVerse is a fresh resource for digital commerce entrepreneurs seeking comprehensive business solutions and innovative AI-powered tools for global success.</p>
+                <a class="cta-button" onclick="showServiceInquiry()">Explore Our Services</a>
+            </div>
         </div>
     </div>
-</section>
 
-<!-- SERVICES PAGE -->
-<section id="services" class="page-section">
-    <div class="services">
+    <!-- Services Section -->
+    <section id="services-section" class="front-page-section services">
         <div class="container">
-            <h2 class="section-title">Our Core Services</h2>
+            <h2 class="section-title">Our Core <span class="accent">Services</span></h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card fade-in">
                     <div class="service-icon">🛒</div>
                     <h3>E-Commerce Solutions</h3>
                     <p>TikTok Shop and Shopify store development with product sourcing guidance, inventory planning, and sales optimization strategies for new entrepreneurs.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
                     <div class="service-icon">💼</div>
                     <h3>Business Formation Consulting</h3>
                     <p>Guidance for establishing US-based companies, including LLC formation basics, tax considerations, and compliance guidance for international entrepreneurs.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
                     <div class="service-icon">🏭</div>
                     <h3>Supplier Network Access</h3>
                     <p>Connections to vetted suppliers, quality assessment guidance, shipping coordination support, and sourcing strategies for retail businesses.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
                     <div class="service-icon">📱</div>
                     <h3>Digital Product Development</h3>
                     <p>Creation of digital resources, business guides, and automated systems designed to help scale business operations efficiently.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
                     <div class="service-icon">🤖</div>
                     <h3>AI Integration Consulting</h3>
                     <p>Guidance on AI solutions for business automation, customer service optimization, and operational efficiency improvements.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
                     <div class="service-icon">📊</div>
                     <h3>Strategic Business Planning</h3>
                     <p>Business planning support, market research guidance, and growth strategies to help entrepreneurs build sustainable ventures.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="front-page-section coming-soon">
+        <div class="container">
+            <h2 class="section-title">Coming <span class="accent">Soon</span></h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Exciting new products and services launching soon!</p>
+            
+            <div class="coming-soon-grid">
+                <div class="coming-soon-card fade-in">
+                    <h3>🛍️ NiilaVerse Digital Store</h3>
+                    <p>TikTok-driven Shopify store featuring curated digital products including comprehensive e-books on digital commerce, verified supplier databases, business setup guides, and exclusive entrepreneur resources.</p>
+                </div>
+                <div class="coming-soon-card fade-in">
+                    <h3>🤖 AI-Powered Consulting Suite</h3>
+                    <p>Stay tuned for our AI-driven consulting tools launching soon—streamline your U.S. digital business with smart automation! Features will include automated business setup guidance and intelligent supplier matching.</p>
+                </div>
+                <div class="coming-soon-card fade-in">
+                    <h3>📚 Entrepreneur Academy</h3>
+                    <p>Comprehensive online courses covering everything from LLC formation to advanced e-commerce strategies, featuring step-by-step video tutorials and downloadable templates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="front-page-section reviews">
+        <div class="container">
+            <h2 class="section-title">Early Success <span class="accent">Stories</span></h2>
+            <div class="testimonial-grid">
+                <div class="testimonial fade-in">
+                    <div class="testimonial-text">"NiilaVerse's guidance helped me plan my U.S. business entry. Their systematic approach gave me confidence in taking the next steps."</div>
+                    <div class="testimonial-author">Sarah M.</div>
+                    <div class="testimonial-role">Aspiring Entrepreneur</div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="testimonial-text">"The supplier network resources provided valuable insights for my product research. Great starting point for new business owners."</div>
+                    <div class="testimonial-author">Michael R.</div>
+                    <div class="testimonial-role">E-commerce Startup</div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="testimonial-text">"Working with NiilaVerse gave me access to information I couldn't have found on my own. Their guidance is practical and actionable."</div>
+                    <div class="testimonial-author">Amanda F.</div>
+                    <div class="testimonial-role">Digital Commerce Beginner</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a class="cta-button" onclick="showConsultationBooking()">Book Early Access Consultation</a>
+            </div>
+        </div>
+    </section>
 </section>
 
 <!-- ABOUT PAGE -->
@@ -638,7 +837,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Building the Future of Digital Commerce</h2>
+                    <h2>Building the Future of <span class="accent">Digital Commerce</span></h2>
                     <p>Launched in 2025, NiilaVerse represents the convergence of traditional business principles with cutting-edge digital innovation. Our mission is to democratize access to global commerce opportunities while providing the tools and knowledge necessary for sustainable business growth.</p>
                     <p>We specialize in bridging the gap between international entrepreneurs and the US market, offering comprehensive solutions that span from initial business formation to advanced operational systems.</p>
                     <p>Our approach combines proven business strategies with emerging technologies, ensuring our clients are positioned for both immediate success and long-term scalability in an increasingly digital marketplace.</p>
@@ -666,113 +865,64 @@
     </div>
 </section>
 
-<!-- REVIEWS PAGE -->
-<section id="reviews" class="page-section">
-    <div class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Early Success Stories</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <div class="testimonial-text">"NiilaVerse's guidance helped me plan my U.S. business entry. Their systematic approach gave me confidence in taking the next steps."</div>
-                    <div class="testimonial-author">Sarah M.</div>
-                    <div class="testimonial-role">Aspiring Entrepreneur</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">"The supplier network resources provided valuable insights for my product research. Great starting point for new business owners."</div>
-                    <div class="testimonial-author">Michael R.</div>
-                    <div class="testimonial-role">E-commerce Startup</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">"Working with NiilaVerse gave me access to information I couldn't have found on my own. Their guidance is practical and actionable."</div>
-                    <div class="testimonial-author">Amanda F.</div>
-                    <div class="testimonial-role">Digital Commerce Beginner</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- CONTACT PAGE -->
 <section id="contact" class="page-section">
     <div class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title">Contact <span class="accent">Us</span></h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <h4>Email</h4>
-                        <p>hello@niilaverse.com</p>
+                        <p><a href="#" class="clickable-link" onclick="copyEmail()">hello@niilaverse.com</a></p>
                     </div>
                     <div class="contact-item">
                         <h4>Website</h4>
-                        <p>niilaverse.com</p>
+                        <p><a href="#" class="clickable-link" onclick="goToHome()">niilaverse.com</a></p>
                     </div>
                     <div class="contact-item">
                         <h4>Business Address</h4>
                         <p>30 N Gould St # 53797<br>Sheridan, Wyoming 82801</p>
-                        <small style="color: #636e72; font-style: italic;">*For banking verification purposes</small>
+                        <small style="color: #666666; font-style: italic;"></small>
                     </div>
                 </div>
                 
                 <div class="form-container">
-                    <h3 style="text-align: center; margin-bottom: 2rem; color: #2d3436;">Get In Touch</h3>
+                    <h3 class="form-title">Get In Touch</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="contact-name">Name *</label>
+                            <input type="text" id="contact-name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
+
+                <!-- Terms Summary -->
+                <div class="terms-summary">
+                    <h4>Terms & Conditions Summary</h4>
+                    <p>By using our services, you agree to our terms. NiilaVerse provides consultative services for informational purposes and does not guarantee specific business outcomes. All content and materials are protected by intellectual property laws. We are not liable for indirect damages, and our total liability is limited to the amount paid for services. These terms are governed by Wyoming state law.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- COMING SOON PAGE -->
-<section id="coming-soon" class="page-section">
-    <div class="coming-soon">
-        <div class="container">
-            <h2 class="section-title">Coming Soon</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Exciting new products and services launching soon!</p>
-            
-            <div class="coming-soon-grid">
-                <div class="coming-soon-card">
-                    <h3>🛍️ NiilaVerse Digital Store</h3>
-                    <p>TikTok-driven Shopify store featuring curated digital products including comprehensive e-books on digital commerce, verified supplier databases, business setup guides, and exclusive entrepreneur resources.</p>
-                </div>
-                <div class="coming-soon-card">
-                    <h3>🤖 AI-Powered Consulting Suite</h3>
-                    <p>Stay tuned for our AI-driven consulting tools launching soon—streamline your U.S. digital business with smart automation! Features will include automated business setup guidance and intelligent supplier matching.</p>
-                </div>
-                <div class="coming-soon-card">
-                    <h3>📚 Entrepreneur Academy</h3>
-                    <p>Comprehensive online courses covering everything from LLC formation to advanced e-commerce strategies, featuring step-by-step video tutorials and downloadable templates.</p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 3rem;">
-                <a class="cta-button" onclick="showPage('consultation-booking')">Book Early Access Consultation</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SERVICE INQUIRY FORM -->
+<!-- SERVICE INQUIRY FORM (Modal-like) -->
 <section id="service-inquiry" class="page-section">
     <div class="contact">
         <div class="container">
-            <h2 class="section-title">Service Inquiry</h2>
+            <h2 class="section-title">Service <span class="accent">Inquiry</span></h2>
             <div class="form-container">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: #2d3436;">Tell us about your project</h3>
+                <h3 class="form-title">Tell us about your project</h3>
                 <form id="serviceForm">
                     <div class="form-group">
                         <label for="inquiry-name">Name *</label>
@@ -800,6 +950,9 @@
                     </div>
                     <button type="submit" class="submit-btn">Submit Inquiry</button>
                 </form>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="cta-button-secondary" onclick="showHome()">← Back to Home</a>
+                </div>
             </div>
         </div>
     </div>
@@ -809,9 +962,9 @@
 <section id="consultation-booking" class="page-section">
     <div class="contact">
         <div class="container">
-            <h2 class="section-title">Book Your Consultation</h2>
+            <h2 class="section-title">Book Your <span class="accent">Consultation</span></h2>
             <div class="form-container">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: #2d3436;">Start Your Journey</h3>
+                <h3 class="form-title">Start Your Journey</h3>
                 <form id="consultationForm">
                     <div class="form-group">
                         <label for="consult-name">Name *</label>
@@ -848,50 +1001,9 @@
                     </div>
                     <button type="submit" class="submit-btn">Book Consultation</button>
                 </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TERMS AND CONDITIONS PAGE -->
-<section id="terms" class="page-section">
-    <div class="terms">
-        <div class="container">
-            <div class="terms-content">
-                <h2>Terms and Conditions</h2>
-                <p><strong>Last Updated:</strong> January 2025</p>
-                
-                <h3>1. Introduction</h3>
-                <p>Welcome to NiilaVerse ("we," "our," or "us"). These Terms and Conditions ("Terms") govern your use of our website and services. By accessing or using our services, you agree to be bound by these Terms.</p>
-                
-                <h3>2. Services</h3>
-                <p>NiilaVerse provides digital commerce consulting, business formation guidance, supplier network access, and related educational services. Our services are informational and consultative in nature and do not constitute legal, financial, or tax advice.</p>
-                
-                <h3>3. User Obligations</h3>
-                <p>By using our services, you agree to: (a) provide accurate and complete information, (b) comply with all applicable laws and regulations, (c) not use our services for any illegal or unauthorized purposes, and (d) respect intellectual property rights.</p>
-                
-                <h3>4. Intellectual Property</h3>
-                <p>All content, materials, and resources provided by NiilaVerse, including but not limited to text, graphics, logos, and software, are owned by or licensed to NiilaVerse and are protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
-                
-                <h3>5. Disclaimers</h3>
-                <p>Our services are provided "as is" without warranties of any kind. We do not guarantee specific business outcomes, success rates, or financial results. Business formation and international commerce involve inherent risks, and past performance does not guarantee future results. You should consult with qualified professionals for legal, tax, and financial advice.</p>
-                
-                <h3>6. Limitation of Liability</h3>
-                <p>To the maximum extent permitted by law, NiilaVerse shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities, arising from your use of our services. Our total liability shall not exceed the amount paid by you for our services.</p>
-                
-                <h3>7. Privacy</h3>
-                <p>We respect your privacy and handle your personal information in accordance with applicable privacy laws. By using our services, you consent to our collection and use of your information as described in our privacy practices.</p>
-                
-                <h3>8. Governing Law</h3>
-                <p>These Terms shall be governed by and construed in accordance with the laws of the State of Wyoming, United States, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of Wyoming.</p>
-                
-                <h3>9. Changes to Terms</h3>
-                <p>We reserve the right to modify these Terms at any time. Updated Terms will be posted on our website with a revised "Last Updated" date. Your continued use of our services after any changes constitutes acceptance of the new Terms.</p>
-                
-                <h3>10. Contact Information</h3>
-                <p>If you have questions about these Terms, please contact us at:</p>
-                <p><strong>Email:</strong> hello@niilaverse.com<br>
-                <strong>Address:</strong> 30 N Gould St # 53797, Sheridan, Wyoming 82801</p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="cta-button-secondary" onclick="showHome()">← Back to Home</a>
+                </div>
             </div>
         </div>
     </div>
@@ -899,26 +1011,62 @@
 
 <footer>
     <div class="container">
-        <p>&copy; 2025 NiilaVerse. All rights reserved. | Empowering Global Digital Commerce</p>
+        <p>&copy; 2025 NIILAVERSE. All rights reserved. | Empowering Global Digital Commerce</p>
     </div>
 </footer>
 
 <script>
-    // Page navigation
-    function showPage(pageId) {
-        // Hide all pages
+    // Page navigation functions
+    function showHome() {
+        hideAllPages();
+        document.getElementById('home').classList.add('active');
+        window.scrollTo(0, 0);
+        closeMobileMenu();
+    }
+
+    function scrollToServices() {
+        showHome();
+        setTimeout(() => {
+            document.getElementById('services-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 100);
+        closeMobileMenu();
+    }
+
+    function showAbout() {
+        hideAllPages();
+        document.getElementById('about').classList.add('active');
+        window.scrollTo(0, 0);
+        closeMobileMenu();
+    }
+
+    function showContact() {
+        hideAllPages();
+        document.getElementById('contact').classList.add('active');
+        window.scrollTo(0, 0);
+        closeMobileMenu();
+    }
+
+    function showServiceInquiry() {
+        hideAllPages();
+        document.getElementById('service-inquiry').classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
+    function showConsultationBooking() {
+        hideAllPages();
+        document.getElementById('consultation-booking').classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
+    function hideAllPages() {
         const pages = document.querySelectorAll('.page-section');
         pages.forEach(page => page.classList.remove('active'));
-        
-        // Show selected page
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) {
-            targetPage.classList.add('active');
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-        
-        // Close mobile menu if open
+    }
+
+    function closeMobileMenu() {
         const navLinks = document.getElementById('navLinks');
         navLinks.classList.remove('active');
     }
@@ -929,33 +1077,86 @@
         navLinks.classList.toggle('active');
     }
 
+    // Clickable link functions
+    function copyEmail() {
+        const email = 'hello@niilaverse.com';
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(email).then(() => {
+                alert('Email address copied to clipboard!');
+            }).catch(() => {
+                fallbackCopyEmail(email);
+            });
+        } else {
+            fallbackCopyEmail(email);
+        }
+    }
+
+    function fallbackCopyEmail(email) {
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            alert('Email address copied to clipboard!');
+        } catch (err) {
+            alert('Unable to copy email. Please copy manually: ' + email);
+        }
+        document.body.removeChild(textArea);
+    }
+
+    function goToHome() {
+        showHome();
+    }
+
     // Form submissions
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for your message! We\'ll get back to you soon.');
-        this.reset();
+        showLoadingState(this.querySelector('.submit-btn'));
+        setTimeout(() => {
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            this.reset();
+        }, 1000);
     });
 
     document.getElementById('serviceForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for your service inquiry! We\'ll review your request and respond within 24 hours.');
-        this.reset();
+        showLoadingState(this.querySelector('.submit-btn'));
+        setTimeout(() => {
+            alert('Thank you for your service inquiry! We\'ll review your request and respond within 24 hours.');
+            this.reset();
+        }, 1000);
     });
 
     document.getElementById('consultationForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for booking a consultation! We\'ll contact you within 24 hours to schedule your session.');
-        this.reset();
+        showLoadingState(this.querySelector('.submit-btn'));
+        setTimeout(() => {
+            alert('Thank you for booking a consultation! We\'ll contact you within 24 hours to schedule your session.');
+            this.reset();
+        }, 1000);
     });
+
+    // Loading state for forms
+    function showLoadingState(button) {
+        const originalText = button.textContent;
+        button.textContent = 'Sending...';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+        }, 2000);
+    }
 
     // Header background change on scroll
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 100) {
-            header.style.background = 'rgba(26, 26, 26, 0.95)';
+            header.style.background = 'rgba(0, 0, 0, 0.95)';
             header.style.backdropFilter = 'blur(10px)';
         } else {
-            header.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)';
+            header.style.background = '#000000';
             header.style.backdropFilter = 'none';
         }
     });
@@ -971,22 +1172,7 @@
         }
     });
 
-    // Smooth scrolling for better UX
-    document.documentElement.style.scrollBehavior = 'smooth';
-
-    // Add loading animation for forms
-    function addLoadingState(button) {
-        const originalText = button.textContent;
-        button.textContent = 'Sending...';
-        button.disabled = true;
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.disabled = false;
-        }, 2000);
-    }
-
-    // Enhanced form validation
+    // Email validation
     function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
@@ -996,14 +1182,16 @@
     document.querySelectorAll('input[type="email"]').forEach(input => {
         input.addEventListener('blur', function() {
             if (this.value && !validateEmail(this.value)) {
-                this.style.borderColor = '#ff4757';
+                this.style.borderColor = '#ff2c2c';
+                this.style.boxShadow = '0 0 0 3px rgba(255, 44, 44, 0.2)';
             } else {
                 this.style.borderColor = '#e0e6ed';
+                this.style.boxShadow = 'none';
             }
         });
     });
 
-    // Add focus management for accessibility
+    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             const navLinks = document.getElementById('navLinks');
@@ -1014,34 +1202,56 @@
         }
     });
 
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
     // Initialize page
     document.addEventListener('DOMContentLoaded', function() {
         // Ensure home page is shown initially
-        showPage('home');
+        showHome();
         
-        // Add fade-in animation for cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Observe elements for fade-in animation
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe service cards and testimonials
+        // Add smooth hover effects
         document.querySelectorAll('.service-card, .testimonial, .coming-soon-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
     });
+
+    // Performance optimization - lazy load background images
+    function preloadCriticalImages() {
+        const criticalImages = [
+            // Add any critical images here
+        ];
+        
+        criticalImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }
+
+    // Call preload function
+    preloadCriticalImages();
 </script>
 ```
 
